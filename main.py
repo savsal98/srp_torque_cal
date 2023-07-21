@@ -117,7 +117,7 @@ def torque_calc(angle:float, x_dyn:list, f_dyn: list, s_rod: float,
         x_dyn = x_dyn[int(len(x_dyn)/2):]
         f_dyn = f_dyn[int(len(f_dyn)/2):]
         v, i = closest_idx(x_dyn,s_rod)
-    torque  = 9.81*(f_dyn[i])*k_tetta - f_cu - t_count*math.sin(angle)
+    torque  = (9.81*f_dyn[i]- f_cu)*k_tetta  - t_count*math.sin(angle)
 
     return torque
 #пример работы функции расчет момента
